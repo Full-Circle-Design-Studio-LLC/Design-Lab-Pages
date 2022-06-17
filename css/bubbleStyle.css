@@ -1,0 +1,153 @@
+/*------------------------------------------------------------------------------ bubble-game.html */
+@keyframes bubble-fall {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+@keyframes bubble-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes finishMenu {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.bubble-bg {
+  background-image: linear-gradient(lightpink, lightblue);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+.bubble {
+  height: 100px;
+  width: 100px;
+  background-color: lightblue;
+  border: 1px gray solid;
+  border-radius: 500px;
+}
+
+.bubble-animation {
+  animation-name: bubble-fall;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  position: absolute;
+}
+
+.bubble:hover {
+}
+
+.bubble-1 {
+  left: 80vw;
+}
+.bubble-2 {
+}
+#score {
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  font-size: 50px;
+}
+
+.score-change {
+  animation-name: bubble-fade;
+  animation-duration: 1s;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: none;
+  border-radius: 0;
+  font-size: 20px;
+}
+
+.fade-out {
+}
+.minus-1 {
+  animation-name: bubble-fade;
+  animation-duration: 1s;
+  color: red;
+  font-size: 20px;
+}
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  height: 60vh;
+  background-color: rgba(89, 89, 89, .5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: white 5px solid;
+  border-radius: 8px;
+  color: white;
+}
+.title {
+  font-size: 40px;
+  text-align: center;
+}
+.how-to-play {
+  margin-top: 3vh;
+  font-size: 25px;
+}
+.how-to-play-list {
+  margin-right: 2vw;
+  margin-left: 2vw;
+  font-size: 18px;
+}
+.play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 10vh;
+  background-color: lightgreen;
+  border: white 1px solid;
+  border-radius: 5px;
+  margin-top: auto;
+  margin-bottom: 2vh;
+  font-size: 40px;
+  text-align: center;
+}
+.play-text {
+
+}
+.play:hover {
+  cursor: pointer;
+}
+#end-menu {
+  visibility: hidden;
+}
+.finalScore {
+  margin-top: 5vh;
+  font-size: 30px;
+}
+.trigger-end-menu {
+  animation-name: finishMenu;
+  animation-delay: 25s;
+  animation-fill-mode: forwards;
+}

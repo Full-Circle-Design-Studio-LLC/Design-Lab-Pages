@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Bubble Game</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/bubbleStyle.css">
+<body>
+  <div class="bubble-bg">
+
+    <div id="score">0</div>
+    <div id="start-menu" class="main-menu">
+      <div class="title">Welcome to Bubble Game!</div>
+      <div class="how-to-play">How to Play:</div>
+      <ul class="how-to-play-list">
+        <li>Pop as many bubbles as possible before the game is over</li>
+        <li>Avoid popping dark gray bubbles</li>
+        <li>Pink bubbles are worth more points!</li>
+      </ul>
+      <div class="play" onclick="game()"><div class="play-text">START</div></div>
+    </div>
+    <div id="end-menu" class="main-menu">
+      <div class="title">FINISH</div>
+      <div class="finalScore">Final Score: <span id="finalScore"></span></div>
+    </div>
+  </div>
+
+</body>
+</html>
+<script src="js/bubble.js"></script>
