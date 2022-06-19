@@ -38,3 +38,121 @@ function animate(scrollItem, entry, className) {
 
   scrollItem.classList.remove(className);
 }
+
+
+
+
+
+
+
+const lid = document.querySelector(".gift-box-lid");
+const pickle = document.querySelector(".gift-box-innard");
+
+const liftPickle = "pickle-up";
+const liftLid = "lid-up";
+const lowerPickle = "pickle-down";
+const lowerLid = "lid-down";
+
+giftParts = [lid, pickle];
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      if (pickle.classList.contains(lowerPickle) && lid.classList.contains(lowerLid)) {
+        pickle.classList.remove(lowerPickle);
+        lid.classList.remove(lowerLid);
+      }
+      pickle.classList.add(liftPickle);
+      lid.classList.add(liftLid);
+      return
+    }
+    if (lid.classList.contains(liftLid)) {
+      lid.classList.add(lowerLid);
+      pickle.classList.add(lowerPickle);
+    }
+    lid.classList.remove(liftLid);
+    pickle.classList.remove(liftPickle);
+  })
+}, options)
+
+observer.observe(lid);
+
+
+
+
+
+// code for scroll animation that continues to change on scroll
+
+
+
+
+
+/*
+const loadBar = document.querySelector(".loading-bar");
+const loadClass = "load-animate";
+
+const observer1 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      loadBar.classList.add(loadClass);
+      return;
+    }
+    loadBar.classList.remove(loadClass);
+  })
+})*/
+
+
+let increasingWidth = "percent";
+let decreasingWidth = "percent";
+
+
+// Set things up
+window.addEventListener("load", (event) => {
+  loadBar = document.querySelector(".loading-bar");
+
+  createObserver();
+}, false);
+
+
+function handleIntersect(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > prevRatio) {
+      entry.target.style.width = increasingWidth.replace("percent", entry.intersectionRatio);
+    } else {
+      entry.target.style.backgroundColor = decreasingWidth.replace("percent", entry.intersectionRatio);
+    }
+
+    prevRatio = entry.intersectionRatio;
+  });
+}
+
+
+
+//set up observer
+function createObserver() {
+  let observer2;
+
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: buildPercentList()
+  };
+
+  observer2 = new IntersectionObserver(handleIntersect, options);
+  observer2.observe(loadBar);
+}
+
+
+// create array of values
+function buildPercentList() {
+  let percentArray = []
+  let numSteps = 10;
+
+  for (let i = 1; i <= numSteps; i++) {
+    percent = i * numSteps;
+    percentArray.push(percent);
+  }
+
+  percentArray.push(0);
+  return percentArray;
+}
