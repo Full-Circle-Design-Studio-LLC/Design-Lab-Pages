@@ -1,0 +1,27 @@
+Bubble Game Notes
+o save high score
+o add difficulties
+
+Canvas:
+o add toolbar:
+	o color picker will be one icon with dropdown
+	o custom color selector
+	o eraser (just changes bg color to lightgray)
+	o toggle canvas box borders
+
+Scroll animation:
+o make animation that progresses as you scroll
+
+Future: navbar tests:
+o just try to get the process down
+
+Future: shape creator:
+o user enters specs in input fields such as height, width, border radius, etc.
+o can select certain preset things such as shape (square, circle, etc.)
+o when all is input, hit enter to generate shape
+
+Future: dodging game:
+o desc: 5 tracks (rows) and character sits at left; items to avoid slide from right to left and you dodge them by using arrow keys to move up and down tracks
+o can have good items that give bonus points or maybe effects like temporarily slowing down movement of bad items
+o no time limit; instead, make it progressively harder over time
+	o this could be done by making bad item speed/frequency increase ever so slightly after each one is deployed. That way, js is not relying on time intervals to increase difficulty or end game
