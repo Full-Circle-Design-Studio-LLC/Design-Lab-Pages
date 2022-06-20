@@ -7,16 +7,19 @@
 <div class = "canvas-page">
 
   <div class="color-picker">
-    <div class="color-picker-title">Color Picker</div>
+    <div class="toolbar-icon color-select-icon" onclick="openSelection()"><img class="toolbar-img" src="assets/colors.png"></div>
+    <div class="toolbar-icon grid-toggle" onclick="toggleGrid()">
+      <div class="tsq grid-toggle-sq-1"></div>
+      <div class="tsq grid-toggle-sq-2"></div>
+      <div class="tsq grid-toggle-sq-3"></div>
+      <div class="tsq grid-toggle-sq-4"></div>
+    </div>
+    <div class="toolbar-icon eraser" onclick="selectEraser()"><img class="toolbar-img" src="assets/eraser.png"></div>
     <div class="color-selection">
-      <div class="color-preview color-preview-red" onclick="selectColorRed()"></div>
-      <div class="color-names color-red" onclick="selectColorRed()">RED</div>
-      <div class="color-preview color-preview-blue" onclick="selectColorBlue()"></div>
-      <div class="color-names color-blue" onclick="selectColorBlue()">BLUE</div>
-      <div class="color-preview color-preview-green" onclick="selectColorGreen()"></div>
-      <div class="color-names color-green" onclick="selectColorGreen()">GREEN</div>
-      <div class="color-preview color-preview-black" onclick="selectColorBlack()"></div>
-      <div class="color-names color-black" onclick="selectColorBlack()">BLACK</div>
+      <div class="color-preview color-preview-red" onclick="selectColorRed(); openSelection()"></div>
+      <div class="color-preview color-preview-blue" onclick="selectColorBlue(); openSelection()"></div>
+      <div class="color-preview color-preview-green" onclick="selectColorGreen(); openSelection()"></div>
+      <div class="color-preview color-preview-black" onclick="selectColorBlack(); openSelection()"></div>
     </div>
   </div>
 

@@ -4,10 +4,11 @@ o add difficulties
 
 Canvas:
 o add toolbar:
-	o color picker will be one icon with dropdown
+	x color picker will be one icon with dropdown
 	o custom color selector
-	o eraser (just changes bg color to lightgray)
-	o toggle canvas box borders
+	x eraser (just changes bg color to lightgray)
+	x toggle canvas box borders
+	o clear all
 
 Scroll animation:
 o make animation that progresses as you scroll

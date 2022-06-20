@@ -2,7 +2,8 @@ const red = document.querySelector(".color-preview-red");
 const blue = document.querySelector(".color-preview-blue");
 const black = document.querySelector(".color-preview-black");
 const green = document.querySelector(".color-preview-green");
-colorClasses = [red, blue, black, green];
+const lightgray = document.querySelector(".eraser");
+colorClasses = [red, blue, black, green, lightgray];
 
 let currentColor;
 
@@ -26,14 +27,23 @@ function selectColorGreen () {
   selectColor(green);
   currentColor = "green";
 }
+function selectEraser() {
+  console.log("eraser selected");
+  currentColor = "lightgray";
+  selectColor(lightgray);
+}
 
 function selectColor(color) {
-  color.classList.add("selected");
-  //colorClasses.forEach(removeSelected);
+  if (currentColor != "lightgray") {
+    color.classList.add("selected");
+  } else {
+    color.classList.add("eraser-selected");
+  }
+
   for (const item of colorClasses) {
-    console.log(item);
     if (item != color) {
       item.classList.remove("selected");
+      item.classList.remove("eraser-selected");
     }
   }
 }
@@ -55,4 +65,20 @@ function removeSelected(item, index) {
 function setColor(clickedClass) {
   console.log(currentColor);
   document.querySelector("."+clickedClass).style.backgroundColor = currentColor;
+}
+
+function openSelection() {
+  document.querySelector(".color-selection").classList.toggle("selection-show");
+}
+
+function toggleGrid() {
+  let canvasSquares = document.querySelectorAll(".canvas-square");
+  for (const sq of canvasSquares) {
+    sq.classList.toggle("canvas-square-hide-border");
+  }
+
+  let toggleIconSquares = document.querySelectorAll(".tsq");
+  for (const tsq of toggleIconSquares) {
+    tsq.classList.toggle("canvas-square-hide-border");
+  }
 }
