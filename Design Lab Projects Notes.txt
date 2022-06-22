@@ -14,7 +14,7 @@ Scroll animation:
 o make animation that progresses as you scroll
 
 Future: navbar tests:
-o just try to get the process down
+o do proof navbar
 
 Future: shape creator:
 o user enters specs in input fields such as height, width, border radius, etc.
