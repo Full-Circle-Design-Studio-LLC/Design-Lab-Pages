@@ -14,11 +14,14 @@ Scroll animation:
 o make animation that progresses as you scroll
 
 Proof navbar:
+o why does nav menu flash on page load?
 o x button currently bottom-heavy needs fixed
 o when hitting 'x' button while nav item is open, make that process more smooth
 o "we do one thing change" text should scale up with size of screen
 	o option 1: transform: scale()
 	o option 2: em or rem
+o if we have time:
+	o fine tune navbar close
 
 Future: image view practice:
 o image gallery w left/right arrows to navigate

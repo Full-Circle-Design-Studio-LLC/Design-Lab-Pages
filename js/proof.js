@@ -29,25 +29,29 @@ function openNavMenu() {
   navItems.classList.remove("nav-items-initial");
   navItems.classList.toggle("nav-items-show");
 
+  console.log(menu);
+
+  if (menu === "closed") {
+    eachNavItem.forEach(item => item.style.display = "block");
+  }
+
   // opening menu...
   if (menuCounter % 2 === 1) {
-    console.log("open menu");
   } else  /*closing menu*/ {
-    console.log("close menu");
-    closeNavItems();
+    if (navItem1.classList.contains("nav-item-orange") || navItem2.classList.contains("nav-item-orange") || navItem3.classList.contains("nav-item-orange")) {
+      eachNavItem.forEach(item => item.style.display = "none");
+      menu = "closed";
+    }
   }
 
   // if nav item is currently open, close it
   if (navItem1.classList.contains("nav-item-orange")) {
-    menu = "closing";
     nav1();
   }
   if (navItem2.classList.contains("nav-item-orange")) {
-    menu = "closing";
     nav2();
   }
   if (navItem3.classList.contains("nav-item-orange")) {
-    menu = "closing";
     nav3();
   }
 
@@ -65,6 +69,7 @@ function openNavMenu() {
 }
 
 
+// open/close nav item 1
 function nav1() {
 
   // when the user closes the nav menu without closing an individual nav item...
@@ -92,11 +97,10 @@ function nav1() {
 
 
 function closeNavItems() {
-  if (navItem1.classList.contains("nav-item-orange") || navItem2.classList.contains("nav-item-orange") || navItem3.classList.contains("nav-item-orange")) {
-    eachNavItem.forEach(item => item.style.display = "none");
-  }
+
 }
 
+// open/close nav item 2
 function nav2() {
   if (c < 1) {
     nav2Img.classList.toggle("nav-item-rotate");
@@ -116,6 +120,7 @@ function nav2() {
   navItem3.classList.toggle("slide-off");
 }
 
+// open/close nav item 3
 function nav3() {
   if (f < 1) {
     nav3Img.classList.toggle("nav-item-rotate");
