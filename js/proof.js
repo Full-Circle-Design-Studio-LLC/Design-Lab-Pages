@@ -2,6 +2,8 @@ const hamburgerMenu = document.querySelector(".hamburger-menu");
 const hamburgerTopLine = document.querySelector(".hamburger-menu-top-line");
 const hamburgerBottomLine = document.querySelector(".hamburger-menu-bottom-line");
 const navItems = document.querySelector(".nav-items");
+const eachNavItem = document.querySelectorAll(".nav-item");
+let menu;
 
 
 
@@ -19,6 +21,7 @@ const nav3Sub = document.querySelector(".nav-3-sub-items");
 i = 0;
 c = 0;
 f = 0;
+menuCounter = 1;
 
 
 // opens mobile nav menu and triggers
@@ -26,14 +29,25 @@ function openNavMenu() {
   navItems.classList.remove("nav-items-initial");
   navItems.classList.toggle("nav-items-show");
 
+  // opening menu...
+  if (menuCounter % 2 === 1) {
+    console.log("open menu");
+  } else  /*closing menu*/ {
+    console.log("close menu");
+    closeNavItems();
+  }
+
   // if nav item is currently open, close it
   if (navItem1.classList.contains("nav-item-orange")) {
+    menu = "closing";
     nav1();
   }
   if (navItem2.classList.contains("nav-item-orange")) {
+    menu = "closing";
     nav2();
   }
   if (navItem3.classList.contains("nav-item-orange")) {
+    menu = "closing";
     nav3();
   }
 
@@ -47,10 +61,19 @@ function openNavMenu() {
     hamburgerTopLine.classList.toggle("hamburger-menu-top-line-x");
     hamburgerBottomLine.classList.toggle("hamburger-menu-bottom-line-x");
   }
+  menuCounter += 1;
 }
 
 
 function nav1() {
+
+  // when the user closes the nav menu without closing an individual nav item...
+  // if (menu === "closing") {
+  //   //eachNavItem.forEach(item => item.style.display = "none");
+  //   eachNavItem.forEach(item => item.style.animationName = "closeNow");
+  //   menu = "closed";
+  // }
+
   if (i < 1) {
     nav1Img.classList.toggle("nav-item-rotate");
     navItem1.classList.toggle("nav-item-orange");
@@ -65,6 +88,13 @@ function nav1() {
   }
   navItem2.classList.toggle("slide-off");
   navItem3.classList.toggle("slide-off");
+}
+
+
+function closeNavItems() {
+  if (navItem1.classList.contains("nav-item-orange") || navItem2.classList.contains("nav-item-orange") || navItem3.classList.contains("nav-item-orange")) {
+    eachNavItem.forEach(item => item.style.display = "none");
+  }
 }
 
 function nav2() {

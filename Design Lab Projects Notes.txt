@@ -14,8 +14,11 @@ Scroll animation:
 o make animation that progresses as you scroll
 
 Proof navbar:
-o nav subitems should maybe be separate div rather than children
-o make 'x' button also close nav subitems
+o x button currently bottom-heavy needs fixed
+o when hitting 'x' button while nav item is open, make that process more smooth
+o "we do one thing change" text should scale up with size of screen
+	o option 1: transform: scale()
+	o option 2: em or rem
 
 Future: image view practice:
 o image gallery w left/right arrows to navigate

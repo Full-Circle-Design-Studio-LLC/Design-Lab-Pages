@@ -83,6 +83,11 @@
     transform: translateY(0);
   }
 }
+@keyframes closeNow {
+  100% {
+    display: none;
+  }
+}
 * {
   font-family: sans-serif;
 }

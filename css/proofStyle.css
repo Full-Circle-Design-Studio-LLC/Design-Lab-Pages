@@ -71,6 +71,11 @@ body {
     transform: translateX(-100vw);
   }
 }
+@keyframes closeNow {
+  100% {
+    display: none;
+  }
+}
 a {
   text-decoration: none;
   color: black;
