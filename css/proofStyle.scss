@@ -224,6 +224,10 @@ a {
   position: absolute;
   top: 0;
   z-index: -1;
+  img {
+    width: 100vw;
+    height: auto;
+  }
 }
 .hero-text {
   position: absolute;
@@ -231,12 +235,13 @@ a {
   font-weight: 900;
   opacity: .5;
   color: #E1E1E1;
+  text-align: center;
 }
 .hero-text-line-1 {
-  font-size: 37px;
-  line-height: 32px;
+  font-size: 9.6vw;
+  line-height: 6vw;
 }
 .hero-text-line-2 {
-  font-size: 80px;
-  line-height: 73px;
+  font-size: 20.9vw;
+  line-height: 19vw;
 }
