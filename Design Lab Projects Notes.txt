@@ -22,7 +22,13 @@ o if we have time:
 	
 Future:
 o restaurant ordering (pizza):
-	o customize pizza and update price as they go
+	o client sets selection boxes as either "can choose multiple" (eg toppings) or "can choose one" (eg size)
+	o maybe have separate section for pizzas and for things like extra sauces and sides
+	o quantity option
+	o offer this to a pizza restaurant for free?
+		o include service fee?
+		o could learn a lot for future restaurant ordering
+	o option for making selections unavailable
 
 Future: image view practice:
 o image gallery w left/right arrows to navigate
