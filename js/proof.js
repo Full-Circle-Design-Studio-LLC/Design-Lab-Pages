@@ -64,6 +64,17 @@ function openNavMenu() {
     eachNavItem.forEach(item => item.style.display = "block");
   }
 
+  // if nav items 2 or 3 contain "move-up" or "move-up-far" classes,
+  // remove it (this happens when nav item 2 or 3 is opened, then
+  // search menu is opened then nav menu is closed?)
+  // console.log(navItem2.classList);
+  // if (navItem2.classList.contains("move-up")) {
+  //   navItem2.classList.remove("move-up");
+  // }
+  // if (navItem3.classList.contains("move-up-far")) {
+  //   navItem3.classList.remove("move-up-far");
+  // }
+
   // if nav item is currently open, close it
   if (navItem1.classList.contains("nav-item-orange")) {
     nav1();
@@ -79,18 +90,24 @@ function openNavMenu() {
   if (searchDiv.classList.contains("search-show")) {
     searchDiv.classList.toggle("search-show");
 
-    // set nav items to display none, then wait and set them back to block
+    // set nav items to display none
     eachNavItem.forEach((item) => {
       item.style.display = "none";
-
-      // setTimeout(() => {
-      //   item.style.display = "block";
-      // }, 400)
     });
 
-    navItem1.classList.toggle("slide-off");
-    navItem2.classList.toggle("slide-off");
-    navItem3.classList.toggle("slide-off");
+    // for first 3 nav items, check if "slide-off" class is present;
+    // this happens when opening a nav item, then opening the search menu
+    for (let f = 0; f < eachNavItem.length-1; f++) {
+        if (eachNavItem[f].classList.contains("slide-off")) {
+          eachNavItem[f].classList.toggle("slide-off");
+      }
+    }
+    // same as preceding code, but for nav subitems
+    eachNavSubItem.forEach(item => {
+      if (item.classList.contains("slide-off")) {
+        item.classList.toggle("slide-off");
+      }
+    })
   }
 
   if (hamburgerTopLine.classList.length === 1) {
@@ -134,14 +151,22 @@ function nav2() {
   if (c < 1) {
     nav2Img.classList.toggle("nav-item-rotate");
     navItem2.classList.toggle("nav-item-orange");
-    navItem2.classList.toggle("move-up");
+    if (searchDiv.classList.contains("search-show")) {
+      // do nothing
+    } else {
+      navItem2.classList.toggle("move-up");
+    }
     nav2Sub.classList.toggle("show-sub-items");
     c += 1;
   } else {
     nav2Img.classList.toggle("nav-item-rotate");
     nav2Img.classList.toggle("nav-rotate-back");
     navItem2.classList.toggle("nav-item-orange");
-    navItem2.classList.toggle("move-up");
+    if (searchDiv.classList.contains("search-show")) {
+      // do nothing
+    } else {
+      navItem2.classList.toggle("move-up");
+    }
     nav2Sub.classList.toggle("show-sub-items");
 
   }
@@ -154,14 +179,22 @@ function nav3() {
   if (f < 1) {
     nav3Img.classList.toggle("nav-item-rotate");
     navItem3.classList.toggle("nav-item-orange");
-    navItem3.classList.toggle("move-up-far");
+    if (searchDiv.classList.contains("search-show")) {
+      // do nothing
+    } else {
+      navItem3.classList.toggle("move-up-far");
+    }
     nav3Sub.classList.toggle("show-sub-items");
     f += 1;
   } else {
     nav3Img.classList.toggle("nav-item-rotate");
     nav3Img.classList.toggle("nav-rotate-back");
     navItem3.classList.toggle("nav-item-orange");
-    navItem3.classList.toggle("move-up-far");
+    if (searchDiv.classList.contains("search-show")) {
+      // do nothing
+    } else {
+      navItem3.classList.toggle("move-up-far");
+    }
     nav3Sub.classList.toggle("show-sub-items");
   }
   navItem1.classList.toggle("slide-off");
@@ -176,7 +209,24 @@ function search() {
 
   // if a single nav item is open, close it
   // else (if none are open) close nav items
-  navItem1.classList.toggle("slide-off");
-  navItem2.classList.toggle("slide-off");
-  navItem3.classList.toggle("slide-off");
+  if (nav1Sub.classList.contains("show-sub-items")) {
+    navItem1.classList.toggle("slide-off");
+    nav1Sub.classList.toggle("slide-off");
+
+    // for the following two, removes "move-up" class,
+    // then adds class to set position not using an animation;
+    // then adds slide off class
+  } else if (nav2Sub.classList.contains("show-sub-items")) {
+    navItem2.classList.toggle("slide-off");
+    navItem2.classList.toggle("move-up");
+    nav2Sub.classList.toggle("slide-off");
+  } else if (nav3Sub.classList.contains("show-sub-items")) {
+    navItem3.classList.toggle("slide-off");
+    navItem3.classList.toggle("move-up-far");
+    nav3Sub.classList.toggle("slide-off");
+  } else {
+    navItem1.classList.toggle("slide-off");
+    navItem2.classList.toggle("slide-off");
+    navItem3.classList.toggle("slide-off");
+  }
 }
