@@ -1,5 +1,5 @@
 * {
-  font-family: sans-serif;
+  font-family: Roboto;
 }
 body {
   margin: 0;
@@ -7,11 +7,11 @@ body {
 
 @keyframes rotateClockwise {
   0% {transform: rotate(0);}
-  100% {transform: rotate(45deg) translate(5px, 6px);}
+  100% {transform: rotate(45deg) translate(6px, 7px);}
 }
 @keyframes rotateCounterclockwise {
   0% {transform: rotate(0);}
-  100% {transform: rotate(-45deg) translate(-5px, -8px);}
+  100% {transform: rotate(-45deg) translate(-5px, -9px);}
 }
 @keyframes rotateBack {
   0% {transform: rotate(45deg) translate(5px, 6px);}
@@ -87,6 +87,7 @@ a {
   margin-left: 55px;
   font-size: 22px;
   font-weight: bold;
+  width: fit-content;
   img {
     margin-right: 10px;
   }
@@ -98,20 +99,6 @@ a {
 .nav-item-2,
 .nav-item-3 {
   transition-duration: .5s;
-}
-.nav-1-img,
-.nav-2-img,
-.nav-3-img {
-}
-
-.nav-1-sub-items {
-
-}
-.nav-2-sub-items {
-
-}
-.nav-3-sub-items {
-
 }
 
 .nav-1-sub-items,
@@ -217,7 +204,46 @@ a {
   animation-name: rotateBackCounter;
 }
 
+.search,
+.search-show {
+  transition-duration: .3s;
+  position: absolute;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  bottom: 50vh;
+  margin: auto;
+}
+.search {
+  visibility: hidden;
+  opacity: 0;
+}
+.search-show {
+  visibility: visible;
+  opacity: 1;
+}
+.search-bar {
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  border-bottom: 1px solid #E1E1E1;
+  width: 90vw;
+  font-size: 30px;
+}
+.search-bar:focus {
+  outline: none;
+}
 
+.go {
+  width: fit-content;
+  margin: auto;
+  margin-top: 35px;
+  font-size: 27px;
+  color: #E57200;
+}
+.go:hover {
+  cursor: pointer;
+}
 
 
 .hero {
@@ -238,10 +264,10 @@ a {
   text-align: center;
 }
 .hero-text-line-1 {
-  font-size: 9.6vw;
-  line-height: 6vw;
+  font-size: 11.7vw;
+  line-height: 9vw;
 }
 .hero-text-line-2 {
-  font-size: 20.9vw;
-  line-height: 19vw;
+  font-size: 25vw;
+  line-height: 22vw;
 }
