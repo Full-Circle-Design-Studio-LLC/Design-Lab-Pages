@@ -28,6 +28,9 @@ o restaurant ordering (pizza):
 	o offer this to a pizza restaurant for free?
 		o include service fee?
 		o could learn a lot for future restaurant ordering
+		o maybe could provide one of two options:
+			o fee per transaction (either flat fee or percentage of sale)
+			o OR charge monthly fee
 	o option for making selections unavailable
 
 Future: image view practice:

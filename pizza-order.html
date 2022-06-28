@@ -11,6 +11,7 @@
   </div>
 
   <div class="subtotal-bar">
+    <div class="order-preview">Order Preview</div>
     <div class="subtotal">Subtotal: $<span id="sub">0</span></div>
   </div>
 
@@ -19,7 +20,7 @@
       <div class="selection-description">Size</div>
       <img class="selection-arrow" src="assets/arrow-down.svg">
     </div>
-    <div class="selection-items selection-items-1">
+    <div class="selection-items selection-items-1 multiple-choice-false">
       <div class="selection-item">
         <div class="selection-item-text">Small +8</div>
       </div>
@@ -33,7 +34,7 @@
         <div class="selection-item-text">Extra Large +14</div>
       </div>
     </div>
-    <div class="selection-box selection-box-2">
+    <div class="selection-box selection-box-2 multiple-choice-false">
       <div class="selection-description">Crust</div>
       <img class="selection-arrow" src="assets/arrow-down.svg">
     </div>
@@ -45,7 +46,7 @@
         <div class="selection-item-text">Thick</div>
       </div>
     </div>
-    <div class="selection-box selection-box-3">
+    <div class="selection-box selection-box-3 multiple-choice-true">
       <div class="selection-description">Toppings</div>
       <img class="selection-arrow" src="assets/arrow-down.svg">
     </div>
@@ -101,7 +102,16 @@
     </div>
   </div>
 
-  <a class="pizza-button continue-to-checkout" href="restaurant-checkout.html">Continue To Checkout</a>
+  <div class="pizza-quantity">
+    <div class="pizza-quantity-text">Pizza Quantity</div>
+    <div class="pizza-quantity-counter">
+      <div class="pizza-minus-container" onclick="changeQuantity(pizzaQuantity, 0, 0)"><div class="pizza-minus">-</div></div>
+      <div class="pizza-quantity-number">1</div>
+      <div class="pizza-minus-container" onclick="changeQuantity(pizzaQuantity, 1, 0)"><div class="pizza-plus">+</div></div>
+    </div>
+  </div>
+
+  <a class="pizza-button add-to-order" href="restaurant-checkout.html">Add To Order</a>
 
 </div>
 </html>
