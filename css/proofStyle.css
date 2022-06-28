@@ -1,5 +1,5 @@
 * {
-  font-family: sans-serif;
+  font-family: Roboto;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     transform: rotate(0);
   }
   100% {
-    transform: rotate(45deg) translate(5px, 6px);
+    transform: rotate(45deg) translate(6px, 7px);
   }
 }
 @keyframes rotateCounterclockwise {
@@ -19,7 +19,7 @@ body {
     transform: rotate(0);
   }
   100% {
-    transform: rotate(-45deg) translate(-5px, -8px);
+    transform: rotate(-45deg) translate(-5px, -9px);
   }
 }
 @keyframes rotateBack {
@@ -123,6 +123,7 @@ a {
   margin-left: 55px;
   font-size: 22px;
   font-weight: bold;
+  width: fit-content;
 }
 .nav-item img {
   margin-right: 10px;
@@ -248,6 +249,52 @@ a {
   animation-name: rotateBackCounter;
 }
 
+.search,
+.search-show {
+  transition-duration: 0.3s;
+  position: absolute;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  bottom: 50vh;
+  margin: auto;
+}
+
+.search {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.search-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.search-bar {
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  border-bottom: 1px solid #E1E1E1;
+  width: 90vw;
+  font-size: 30px;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+.go {
+  width: fit-content;
+  margin: auto;
+  margin-top: 35px;
+  font-size: 27px;
+  color: #E57200;
+}
+
+.go:hover {
+  cursor: pointer;
+}
+
 .hero {
   position: absolute;
   top: 0;
@@ -268,13 +315,13 @@ a {
 }
 
 .hero-text-line-1 {
-  font-size: 9.6vw;
-  line-height: 6vw;
+  font-size: 11.7vw;
+  line-height: 9vw;
 }
 
 .hero-text-line-2 {
-  font-size: 20.9vw;
-  line-height: 19vw;
+  font-size: 25vw;
+  line-height: 22vw;
 }
 
 /*# sourceMappingURL=proofStyle.css.map */
