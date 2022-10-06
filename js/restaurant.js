@@ -1,10 +1,14 @@
 const selectionItem = document.querySelectorAll(".selection-item");
+const selectionBoxes = document.querySelectorAll(".selection-box");
 const subTotalSpan = document.getElementById("sub");
 let pizzaQuantity = document.querySelector(".pizza-quantity-number");
 
+let pizzaList;
+let toppingList;
+
 id = 0;
 
-
+// set ids and onclicks for selection items
 selectionItem.forEach(item => {
   idString = id.toString();
 
@@ -14,10 +18,14 @@ selectionItem.forEach(item => {
   id += 1;
 })
 
+id = 0;
+
+// set ids for selection boxes
+setIds(selectionBoxes, "selection-box-", null);
 
 
 function selected(selectedId) {
-  const selectedOption = document.getElementById(selectedId);
+  let selectedOption = document.getElementById(selectedId);
   selectedOption.classList.toggle("selected-style");
 
   //find out if multiple items can be selected
@@ -28,6 +36,8 @@ function selected(selectedId) {
     // get parentNode and do forEach on each of its children;
     // if any children have "selected-style" class (besides selected that was just clicked),
     // remove that class and add it to the current selection
+
+
   }
 
   // if class is selected-style, add itemCost; else, subtract
@@ -80,6 +90,27 @@ function changeQuantity(item, plusOrMinus, canBeZero) {
         item.innerHTML = q;
       }
     }
+
+  }
+}
+
+function toggleItems(thisId) {
+  currentItem = document.getElementById(thisId);
+  console.log(currentItem);
+  console.log(currentItem.nextElementSibling);
+  currentItem.nextElementSibling.classList.toggle("selection-items-hide");
+}
+
+// sets ids to elements of a class
+function setIds(className, idStr, onclickStr) {
+  idNum = 0;
+  className.forEach(item => {
+    idNumStr = idNum.toString();
+    item.id = idStr+idNumStr;
+    idNum += 1;
+  })
+
+  if (onclickStr != null) {
 
   }
 }

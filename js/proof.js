@@ -6,6 +6,7 @@ const eachNavItem = document.querySelectorAll(".nav-item");
 let menu;
 
 searchDiv = document.querySelector(".search");
+searchPart = document.querySelectorAll(".search-part");
 
 
 
@@ -206,6 +207,9 @@ function nav3() {
 function search() {
 
   searchDiv.classList.toggle("search-show");
+
+  searchPart.forEach(item => item.classList.toggle("search-part-orange"));
+
 
   // if a single nav item is open, close it
   // else (if none are open) close nav items

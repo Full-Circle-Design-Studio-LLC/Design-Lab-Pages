@@ -21,7 +21,7 @@ o if we have time:
 o change color of search icon on click
 	
 Future:
-o restaurant ordering (pizza):
+o restaurant ordering (coffee):
 	o client sets selection boxes as either "can choose multiple" (eg toppings) or "can choose one" (eg size)
 	o maybe have separate section for pizzas and for things like extra sauces and sides
 	o quantity option
@@ -32,6 +32,16 @@ o restaurant ordering (pizza):
 			o fee per transaction (either flat fee or percentage of sale)
 			o OR charge monthly fee
 	o option for making selections unavailable
+	
+	o steps:
+		o find how to handle submitted php
+			o where do the submitted fields go? Should it be stored somewhere? Maybe the receipt is emailed to business owner or stored somewhere for them as record
+			
+		o do we generate receipts and receive payments, or does a third party/plugin do that for us?
+		o 
+
+Future: copy starbucks page load smoothness:
+	o only part of page changes on click of some things; so, header and sidebar remain while other part of page reloads/changes
 
 Future: image view practice:
 o image gallery w left/right arrows to navigate

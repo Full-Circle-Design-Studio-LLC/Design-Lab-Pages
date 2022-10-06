@@ -179,6 +179,15 @@ a {
   color: #E57200;
 }
 
+.search-part {
+  transition-duration: 0.3s;
+}
+
+.search-part-orange {
+  stroke: #E57200;
+  transition-duration: 0.3s;
+}
+
 .nav-item-rotate {
   transform: rotate(90deg);
 }

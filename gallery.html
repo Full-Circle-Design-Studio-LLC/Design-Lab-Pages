@@ -20,9 +20,11 @@
     <img class="gal-img" id="i-11" src="assets/11.jpg" onclick="expandImage(this.id)">
     <img class="gal-img" id="i-12" src="assets/5.jpg" onclick="expandImage(this.id)">
   </div>
-  <div id="imgContainer" onclick="closeImg()">
-    <img id="img" class="image-expanded-img" src=""onclick="blockClose()">
+  <div id="imgContainer" class="image-expanded" onclick="closeImg()">
+    <!--<img id="img" class="image-expanded-img" src=""onclick="blockClose()">-->
   </div>
+  <img class="gallery-arrow gallery-arrow-left" src="assets/arrow-left-white.svg" onclick="left()">
+  <img class="gallery-arrow gallery-arrow-right" src="assets/arrow-right-white.svg" onclick="right()">
 
 </div>
 </html>
