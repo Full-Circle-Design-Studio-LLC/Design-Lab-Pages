@@ -4,13 +4,17 @@
 <title>Hover</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="css/style.css">
-<div class="page-body">
+<div class="page-hover">
 
 <div class="hover-navbar"></div>
 
+<h1>Meet The Team</h1>
+
 <div class="hover-items-container">
-    <div class="hover-item">
-        <video class="hover-vid"><source src="assets/west-2.mp4" type="video/mp4"></video>
+    <div class="hover-item" onmouseover="playVid()" onmouseout="resetVid()">
+        <video class="hover-vid" muted loop>
+            <source src="assets/w-compressed.mp4" type="video/mp4">
+        </video>
         <div class="hover-item-text">WESTON</div>
     </div>
     <div class="hover-item">
