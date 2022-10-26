@@ -912,6 +912,21 @@ body {
   animation-fill-mode: forwards;
 }
 
+.sticky-item-container {
+  background-color: lightseagreen;
+  width: 100vw;
+  height: 200vh;
+}
+
+.sticky-item {
+  position: sticky;
+  top: 100px;
+  background-color: aliceblue;
+  border: 1px solid black;
+  width: 200px;
+  height: 400px;
+}
+
 /*------------------------------------------------------------------------------ canvas.html */
 .color-picker {
   display: flex;
@@ -1692,6 +1707,7 @@ body {
 
 .page-horizontal {
   display: flex;
+  background-color: honeydew;
   align-items: center;
   height: 100vh;
 }
@@ -1716,6 +1732,48 @@ body {
 .page-horizontal .banner-text {
   transition-timing-function: linear;
   transform: translateX(var(--trans));
+}
+
+.pre-section {
+  background-color: lightseagreen;
+  height: 100vh;
+  width: 100vw;
+}
+
+.scroll-section-hidden {
+  width: 100vw;
+  height: 500vh;
+  z-index: -2;
+}
+
+.horizontal-scroll-section {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  top: 0;
+  background-color: lightsalmon;
+  height: 100vh;
+  width: 500vw;
+  z-index: -1;
+  overflow-x: scroll;
+}
+
+.scroll-section-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border: 1px solid blue;
+  background: rgba(127, 255, 212, 0.5098039216);
+  font-size: 100px;
+}
+
+.post-section {
+  background-color: lightgoldenrodyellow;
+  height: 100vh;
+  width: 100vw;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -8,29 +8,23 @@ function declareVariablesHome() {
     scrollValue = 2;
     trans = 0;
     // original resetValue/transR: 1655 or -4898
-    proportion = 1000/movingItem.offsetWidth;
+    // proportion = 1000/movingItem.offsetWidth;
     transR = getResetValue();
     //resetValue = getResetValue();
     resetValue = -2385;
-    lastScrollTop = 0;
+    // lastScrollTop = 0;
     pause = false;
     root = document.documentElement;
-    transXL1 = 0;
-    transXL2 = 0;
-    transXL3 = 0;
-    transXR1 = 0;
-    transXR2 = 0;
-    transXR3 = 0;
+    // transXL1 = 0;
+    // transXL2 = 0;
+    // transXL3 = 0;
+    // transXR1 = 0;
+    // transXR2 = 0;
+    // transXR3 = 0;
     units = "vw";
-    s3ImgTransVal = 0;
-    s3Img2TransVal = 0;
-    scrnWidth = getScreenWidth();
-    if (scrnWidth >= 1024) {
-        faceChange = .03;
-    } else {
-        console.log("sw "+scrnWidth);
-        faceChange = .05;
-    }
+    // s3ImgTransVal = 0;
+    // s3Img2TransVal = 0;
+    // scrnWidth = getScreenWidth();
 }
 
 function addTransition(i1,i2) {
@@ -89,6 +83,68 @@ function getWidth(a) {
 
 
 
-function getScreenWidth() {
-    return window.innerWidth;
+// function getScreenWidth() {
+//     return window.innerWidth;
+// }
+
+
+
+
+
+
+
+
+
+
+// horizontal scrolling section
+
+containerDiv = document.querySelector('.scroll-section-hidden');
+
+var hz1 = document.querySelector('.horizontal-scroll-section');
+
+secH = window.innerHeight*4;
+secW = window.innerWidth*4;
+mVal = secW/secH;
+transX = 0;
+
+(function(){
+
+var throttle = function(type, name, obj){
+    var obj = obj || window;
+    var running = false;
+    var func = function(){
+    if (running){ return; }
+    running = true;
+    requestAnimationFrame(function(){
+        obj.dispatchEvent(new CustomEvent(name));
+        running = false;
+    });
+    };
+    obj.addEventListener(type, func);
+};
+
+throttle("scroll", "optimizedScroll");
+})();
+
+window.addEventListener("scroll", function(){
+
+if (containerDiv.getBoundingClientRect().top <= 0) {
+    console.log('in the zone');
+    transX = mVal*containerDiv.getBoundingClientRect().top;
+    if (transX <= -secW) {
+        if (transX < transXPrev) {
+            transX = transXPrev;
+        }
+    }
+    transXPrev = transX;
+    hz1.style.transform = "translateX(" + transX + "px)";
+    console.log('transX: '+transX);
 }
+})
+
+// run code on screen resize
+window.addEventListener("resize", function(event) {
+    secH = window.innerHeight*4;
+    secW = window.innerWidth*4;
+    mVal = secW/secH;
+});
