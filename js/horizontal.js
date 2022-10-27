@@ -102,10 +102,10 @@ containerDiv = document.querySelector('.scroll-section-hidden');
 
 var hz1 = document.querySelector('.horizontal-scroll-section');
 
-secH = window.innerHeight*4;
-secW = window.innerWidth*4;
-mVal = secW/secH;
+screenVariables();
 transX = 0;
+transXPrev = -1;
+
 
 (function(){
 
@@ -128,23 +128,26 @@ throttle("scroll", "optimizedScroll");
 
 window.addEventListener("scroll", function(){
 
-if (containerDiv.getBoundingClientRect().top <= 0) {
-    console.log('in the zone');
-    transX = mVal*containerDiv.getBoundingClientRect().top;
-    if (transX <= -secW) {
-        if (transX < transXPrev) {
-            transX = transXPrev;
+    if (containerDiv.getBoundingClientRect().top <= 0) {
+        transX = mVal*containerDiv.getBoundingClientRect().top;
+        if (transX <= -secW) {
+            if (transX < transXPrev) {
+                transX = transXPrev;
+            }
         }
+        transXPrev = transX;
+        hz1.style.transform = "translateX(" + transX + "px)";
     }
-    transXPrev = transX;
-    hz1.style.transform = "translateX(" + transX + "px)";
-    console.log('transX: '+transX);
-}
 })
 
 // run code on screen resize
 window.addEventListener("resize", function(event) {
+    screenVariables;
+
+});
+
+function screenVariables() {
     secH = window.innerHeight*4;
     secW = window.innerWidth*4;
     mVal = secW/secH;
-});
+}
