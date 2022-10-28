@@ -11,3 +11,14 @@ function resetVid() {
 }
 
 //vid.pause();
+
+
+
+
+
+// canvas
+c = document.getElementById('sq-canvas');
+ctx = c.getContext('2d');
+ctx.moveTo(0,0);
+ctx.lineTo(150,75);
+ctx.stroke();

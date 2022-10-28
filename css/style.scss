@@ -1537,10 +1537,48 @@ body {
 
 
 /* ----------------------------------------------------------- hover */
+@keyframes moveDot {
+  0% {transform: translate(0);}
+  25% {transform: translate(190px,0);}
+  50% {transform: translate(190px,190px);}
+  75% {transform: translate(0,190px);}
+  100% {transform: translate(0);}
+}
 .page-hover {
   padding-top: 80px;
   h1 {
     text-align: center;
+  }
+  .square {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 10px solid olive;
+    margin: auto;
+  }
+  .square:hover {
+    #dot {
+      display: block;
+      animation-name: moveDot;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+  #sq-canvas {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+  }
+  #dot {
+    position: absolute;
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    top: -10px;
+    left: -10px;
   }
 }
 .hover-navbar {
@@ -1692,9 +1730,38 @@ body {
   font-size: 100px;
 }
 .post-section {
+  position: relative;
   background-color: lightgoldenrodyellow;
-  height: 300vh;
+  height: 1000vh;
   width: 100vw;
+}
+.star {
+  position: absolute;
+}
+.star-1 {
+  height: 280px;
+  top: 10vh;
+  left: 5vw;
+}
+.star-2 {
+  height: 200px;
+  top: 40vh;
+  right: 22vw;
+}
+.star-3 {
+  height: 140px;
+  top: 150vh;
+  right: 3vw;
+}
+.star-4 {
+  height: 100px;
+  top: 22vh;
+  left: 25vw;
+}
+.star-5 {
+  height: 40px;
+  top: 200vh;
+  left: 40vw;
 }
 .waffle-img {
   display: block;
