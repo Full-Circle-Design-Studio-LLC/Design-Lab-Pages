@@ -1814,4 +1814,65 @@ body {
   object-fit: cover;
 }
 
+/* ----------------------------------------------------------- scroll-2 */
+.s-bar {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 100px;
+  justify-content: center;
+  object-fit: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.s-bar-1 {
+  background-image: url("../assets/7.jpg");
+  top: 0;
+  height: 100vh;
+}
+
+.s-bar-2 {
+  position: relative;
+  height: 130vh;
+  background-image: url("../assets/8.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.s-bar-2-sub-1 {
+  position: absolute;
+  background-color: orangered;
+  height: 30vh;
+  width: 100vw;
+  top: -10vh;
+  clip-path: ellipse(60vw 8vh at 50% 40%);
+}
+
+.s-bar-3 {
+  position: relative;
+  height: 160vh;
+  background-image: url("../assets/4.jpg");
+}
+
+.s-bar-3-sub-1 {
+  position: absolute;
+  top: -20vh;
+  background-color: aqua;
+  width: 100vw;
+  height: 60vh;
+  clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 80%);
+}
+
+.s-bar-4 {
+  height: 120vh;
+  background-image: url("../assets/10.jpg");
+  position: absolute;
+  top: 120vh;
+  clip-path: polygon(100% 0, 0 15%, 0 100%, 100% 100%);
+}
+
 /*# sourceMappingURL=style.css.map */
