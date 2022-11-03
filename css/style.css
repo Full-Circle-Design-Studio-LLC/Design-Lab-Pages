@@ -1950,7 +1950,7 @@ body {
 
 .s-bar-4 {
   height: 145vh;
-  background-image: url("../assets/12.jpg");
+  background-image: url("../assets/12.JPG");
   position: absolute;
   top: 120vh;
   clip-path: polygon(100% 0, 0 15%, 0 100%, 100% 100%);
