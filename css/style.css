@@ -1936,7 +1936,7 @@ body {
 .s-bar-3 {
   position: relative;
   height: 160vh;
-  background-image: url("../assets/4.jpg");
+  background-image: url("../assets/4-crop.jpg");
 }
 
 .s-bar-3-sub-1 {
@@ -1949,8 +1949,8 @@ body {
 }
 
 .s-bar-4 {
-  height: 120vh;
-  background-image: url("../assets/10.jpg");
+  height: 145vh;
+  background-image: url("../assets/12.jpg");
   position: absolute;
   top: 120vh;
   clip-path: polygon(100% 0, 0 15%, 0 100%, 100% 100%);
