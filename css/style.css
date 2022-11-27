@@ -2259,6 +2259,15 @@ body {
 .w-6 .cronut-name-t {
   color: #DE9570;
 }
+.w-6 .cronut-container-t:hover .c-item-1 {
+  transform: translate(-120%, -160%) scale(3) rotate(-30deg);
+}
+.w-6 .cronut-container-t:hover .c-item-2 {
+  transform: translate(-140%, 180%) scale(2.2) rotate(0);
+}
+.w-6 .cronut-container-t:hover .c-item-3 {
+  transform: translate(230%, 40%) scale(2.5) rotate(45deg);
+}
 
 .w-7 .month {
   color: #BA7C89;
@@ -2266,12 +2275,27 @@ body {
 .w-7 .cronut-name-t {
   color: #B17F89;
 }
+.w-7 .cronut-container-t:hover .c-item-1 {
+  transform: translate(20%, 70%) scale(6.5) rotate(25deg);
+}
+.w-7 .cronut-container-t:hover .c-item-2 {
+  transform: translate(-60%, -90%) scale(5.5) rotate(-30deg);
+}
 
 .w-8 .month {
   color: #9D7857;
 }
 .w-8 .cronut-name-t {
   color: #977A5C;
+}
+.w-8 .cronut-container-t:hover .c-item-1 {
+  transform: translate(-110%, 230%) scale(2.5) rotate(0);
+}
+.w-8 .cronut-container-t:hover .c-item-2 {
+  transform: translate(280%, 200%) scale(1) rotate(0);
+}
+.w-8 .cronut-container-t:hover .c-item-3 {
+  transform: translate(-200%, 0%) scale(2);
 }
 
 .w-9 .month {
@@ -2287,12 +2311,24 @@ body {
 .w-10 .cronut-name-t {
   color: #946646;
 }
+.w-10 .cronut-container-t:hover .c-item-1 {
+  transform: translate(-160%, -160%) scale(3) rotate(45deg);
+}
+.w-10 .cronut-container-t:hover .c-item-2 {
+  transform: translate(20%, 80%) scale(4.8) rotate(20deg);
+}
 
 .w-11 .month {
   color: #E3AB5B;
 }
 .w-11 .cronut-name-t {
   color: #DAAD68;
+}
+.w-11 .cronut-container-t:hover .c-item-1 {
+  transform: translate(-130%, -110%) scale(2.5) rotate(-120deg);
+}
+.w-11 .cronut-container-t:hover .c-item-2 {
+  transform: translate(240%, 280%) scale(2) rotate(40deg);
 }
 
 .w-12 .month {
@@ -2301,7 +2337,6 @@ body {
 .w-12 .cronut-name-t {
   color: #DAAD68;
 }
-
 /* ----------------------------------------------------------- scroll-2 */
 .s-bar {
   width: 100vw;

@@ -2132,6 +2132,17 @@ body {
   .cronut-name-t {
     color: #DE9570;
   }
+  .cronut-container-t:hover {
+    .c-item-1 {
+      transform: translate(-120%, -160%) scale(3) rotate(-30deg);
+    }
+    .c-item-2 {
+      transform: translate(-140%, 180%) scale(2.2) rotate(0);
+    }
+    .c-item-3 {
+      transform: translate(230%, 40%) scale(2.5) rotate(45deg);
+    }
+  }  
 }
 .w-7 {
   .month {
@@ -2140,6 +2151,14 @@ body {
   .cronut-name-t {
     color: #B17F89;
   }
+  .cronut-container-t:hover {
+    .c-item-1 {
+      transform: translate(20%, 70%) scale(6.5) rotate(25deg);
+    }
+    .c-item-2 {
+      transform: translate(-60%, -90%) scale(5.5) rotate(-30deg);
+    }
+}
 }
 .w-8 {
   .month {
@@ -2147,6 +2166,17 @@ body {
   }
   .cronut-name-t {
     color: #977A5C;
+  }
+  .cronut-container-t:hover {
+    .c-item-1 {
+      transform: translate(-110%, 230%) scale(2.5) rotate(0);
+    }
+    .c-item-2 {
+      transform: translate(280%, 200%) scale(1) rotate(0);
+    }
+    .c-item-3 {
+      transform: translate(-200%, 0%) scale(2);
+    }
   }
 }
 .w-9 {
@@ -2164,6 +2194,14 @@ body {
   .cronut-name-t {
     color: #946646;
   }
+  .cronut-container-t:hover {
+    .c-item-1 {
+      transform: translate(-160%, -160%) scale(3) rotate(45deg);
+    }
+    .c-item-2 {
+      transform: translate(20%, 80%) scale(4.8) rotate(20deg);
+    }
+  }
 }
 .w-11 {
   .month {
@@ -2171,6 +2209,14 @@ body {
   }
   .cronut-name-t {
     color: #DAAD68;
+  }
+  .cronut-container-t:hover {
+    .c-item-1 {
+      transform: translate(-130%, -110%) scale(2.5) rotate(-120deg);
+    }
+    .c-item-2 {
+      transform: translate(240%, 280%) scale(2) rotate(40deg);
+    }
   }
 }
 .w-12 {
@@ -2180,8 +2226,17 @@ body {
   .cronut-name-t {
     color: #DAAD68;
   }
+  .cronut-container-t:hover {
+    .c-item-1 {
+    }
+    .c-item-2 {
+    }
+    .c-item-3 {
+    }
+    .c-item-4 {
+    }
+  }
 }
-
 
 
 
