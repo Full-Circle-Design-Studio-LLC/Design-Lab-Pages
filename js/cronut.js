@@ -1,0 +1,168 @@
+body = document.querySelector('body');
+scrollSetup();
+
+root = document.documentElement;
+
+
+// horizontal scrolling section
+
+containerDiv = document.querySelector('.scroll-section-hidden-c');
+
+var hz1 = document.querySelector('.horizontal-scroll-section-c');
+
+screenVariables();
+transX = 0;
+transXPrev = -1;
+zF = true;
+
+
+(function(){
+
+    var throttle = function(type, name, obj){
+        var obj = obj || window;
+        var running = false;
+        var func = function(){
+        if (running){ return; }
+        running = true;
+        requestAnimationFrame(function(){
+            obj.dispatchEvent(new CustomEvent(name));
+            running = false;
+        });
+        };
+        obj.addEventListener(type, func);
+    };
+    
+    throttle("scroll", "optimizedScroll");
+    })();
+    
+    window.addEventListener("scroll", function(){
+    
+        if (containerDiv.getBoundingClientRect().top <= 0) {
+            transX = mVal*containerDiv.getBoundingClientRect().top;
+            if (transX <= -secW) {
+                if (transX < transXPrev) {
+                    transX = transXPrev;
+                    console.log('test2');
+                    zF = false;
+                    hz1.style.zIndex = '-2';
+                }
+            } else {
+                zF = true;
+            }
+            transXPrev = transX;
+            hz1.style.transform = "translateX(" + transX + "px)";
+            if (zF == true) {
+                hz1.style.zIndex = '2';
+            }
+            //root.style.setProperty('--leftVal', transX+'px');
+        } else {
+            hz1.style.zIndex = '-2';
+            zF = true;
+        }
+    }
+)
+
+
+
+// scroll animations
+
+function scrollSetup() {
+    let options = {
+      root: document.querySelector('#scrollArea'),
+      rootMargin: '0px 0px 0px 0px',
+      //threshold: 1.0
+    }
+    items = document.querySelectorAll('.scroll-item');
+    scrl1 = "scrl-1";
+    scrl2 = "scrl-2";
+  
+    items.forEach(scrollItem => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (scrollItem.classList.contains("pause-scroll")) {
+            animate(scrollItem, entry, scrl1, true);
+          } else if (scrollItem.classList.contains("cronut-scroll")) {
+            animate(scrollItem, entry, scrl2, false);
+          }
+        })
+      }, options)
+
+      observer.observe(scrollItem);
+    })
+  }
+  
+  function animate(scrollItem, entry, className, hold) {
+    if (entry.isIntersecting) {
+        scrollItem.classList.add(className);
+        if (scrollItem.classList.contains('cronut-scroll')) {
+            cro = (('.cronut-'+scrollItem.classList[2].substring(14, 16)));
+            cro = document.querySelector(cro);
+            cro.classList.add('show-cronut');  
+            
+            cro2 = (('.scrl-sec-'+scrollItem.classList[2].substring(14, 16)));
+            cro2 = document.querySelector(cro2);
+            cro2.classList.add('show-cronut');            
+        }
+
+        return
+    }
+
+    if (hold == false) {
+      scrollItem.classList.remove(className);
+      if (scrollItem.classList.contains('cronut-scroll')) {
+        cro.classList.remove('show-cronut');
+        cro2.classList.remove('show-cronut');
+      }
+    }
+  }
+
+
+  function screenVariables() {
+    secH = window.innerHeight*11;
+    secW = window.innerWidth*11;
+    scrnHeight = window.innerHeight;
+    mVal = secW/secH;
+}
+
+
+
+
+
+
+
+// parallax mouse effect
+cronut = document.querySelector('.cronut-t');
+pItems = document.querySelectorAll('.mouse-parallax');
+isHovering = false;
+function hovering(cID) {
+    cContainer = document.getElementById(cID);
+    console.log('mouse enter');
+    isHovering = true;
+    containerOffsetX = cContainer.getBoundingClientRect().x;
+    containerOffsetY = cContainer.getBoundingClientRect().y;
+    centerX = cContainer.offsetWidth/2;
+    centerY = cContainer.offsetHeight/2;
+    pItems.forEach(item => {
+        item.style.transition = '.1s';
+    })
+}
+function notHovering() {
+    isHovering = false;
+    pItems.forEach(item => {
+        item.style.transform = null;
+        item.style.translate = null;
+        item.style.transition = '.4s';
+    })
+}
+
+window.addEventListener('mousemove', parallax);
+function parallax(e) {
+    if (isHovering == true) {
+        pItems.forEach(item =>  {
+            dVal = item.getAttribute('data-value');
+            cX = ((centerX - e.clientX - containerOffsetX)) * dVal;
+            cY = ((centerY - e.clientY - containerOffsetY)) * dVal;
+            item.style.translate = cX +'px '+ cY +'px';
+        })        
+    }
+}
