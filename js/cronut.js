@@ -36,6 +36,8 @@ zF = true;
     })();
     
     window.addEventListener("scroll", function(){
+
+        //downUp();
     
         if (containerDiv.getBoundingClientRect().top <= 0) {
             transX = mVal*containerDiv.getBoundingClientRect().top;
@@ -45,6 +47,7 @@ zF = true;
                     console.log('test2');
                     zF = false;
                     hz1.style.zIndex = '-2';
+                    inH = false;
                 }
             } else {
                 zF = true;
@@ -53,11 +56,13 @@ zF = true;
             hz1.style.transform = "translateX(" + transX + "px)";
             if (zF == true) {
                 hz1.style.zIndex = '2';
+                inH = true;
             }
             //root.style.setProperty('--leftVal', transX+'px');
         } else {
             hz1.style.zIndex = '-2';
             zF = true;
+            inH = false;
         }
     }
 )
@@ -136,7 +141,6 @@ pItems = document.querySelectorAll('.mouse-parallax');
 isHovering = false;
 function hovering(cID) {
     cContainer = document.getElementById(cID);
-    console.log('mouse enter');
     isHovering = true;
     containerOffsetX = cContainer.getBoundingClientRect().x;
     containerOffsetY = cContainer.getBoundingClientRect().y;
@@ -166,3 +170,44 @@ function parallax(e) {
         })        
     }
 }
+
+
+
+
+
+// snap scroll
+inH = false;
+lastScrollTop = 0;
+currentSection = 1;
+pauseScroll = false;
+
+// if in  horizontal section: scroll down goes right, scroll up goes left
+function downUp() {
+  if (inH == true && pauseScroll == false) {
+      var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      if (st > lastScrollTop){
+      // downscroll code
+        console.log('downscroll');
+        if (currentSection < 12) {
+          currentSection += 1;
+          document.getElementById("c-s-"+currentSection).scrollIntoView();
+          console.log('scrolled to section '+currentSection);
+        }
+      } else {
+      // upscroll code
+        console.log('upscroll');
+        if (currentSection > 1) {
+          currentSection -= 1;
+          document.getElementById("c-s-"+currentSection).scrollIntoView();
+          console.log('scrolled to section '+currentSection);
+        }  
+      }
+      pauseScroll = true;
+      setTimeout(() => {
+        pauseScroll = false;
+      }, 1000);
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+  }
+}
+
+// after running downUp once, pause all scrolling for very short period

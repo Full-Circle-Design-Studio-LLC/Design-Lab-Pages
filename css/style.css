@@ -1927,6 +1927,7 @@ body {
 .cronut-scroll {
   width: 100vw;
   height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 
 .scroll-section-item-c {
@@ -2104,10 +2105,11 @@ body {
   right: 0;
   margin: auto;
   width: 350px;
-  max-height: 50vh;
   object-fit: cover;
   transition: 0.4s;
   z-index: 2;
+  aspect-ratio: 1/0.89;
+  top: 30vh;
 }
 
 .pop-out {
@@ -2128,8 +2130,8 @@ body {
 }
 
 .cronut-container-t {
-  width: 100%;
-  height: 350px;
+  width: 350px;
+  aspect-ratio: 1/1.11;
 }
 
 .cronut-container-t:hover .cronut-t {
