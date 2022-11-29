@@ -1791,7 +1791,7 @@ body {
 .scroll-section-hidden-c {
   position: relative;
   width: 100vw;
-  height: 1200vh;
+  height: 100vh;
   z-index: -3;
 }
 html {
@@ -1808,15 +1808,44 @@ html {
   overflow: hidden;
   transform: translateX(calc(0 - var(--leftVal)));
 }
+#page-cronut {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+}
+.page-cronut-c {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow: auto;
+  .pre-section,
+  .extra-space {
+    scroll-snap-align: start;
+  }
+}
 .cronut-scroll-item-container {
   position: absolute;
   left: 0;
 }
 .cronut-scroll {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+  z-index: 3;
 }
+.c-hover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 350px;
+  object-fit: cover;
+  transition: 0.4s;
+  z-index: 2;
+  aspect-ratio: 1/0.89;
+  top: 30vh;
+}
+
 .scroll-section-item-c {
   display: flex;
   position: relative;
@@ -1993,9 +2022,6 @@ html {
   aspect-ratio: 1/1.11;
 }
 .cronut-container-t:hover {
-  .cronut-t {
-    scale: .8;
-  }
   .pop-out {
     transform: scale(3);
   }
@@ -2039,19 +2065,19 @@ html {
   .c-item-2 {
     transform: rotate(80deg);
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(-100%, -170%) scale(1.5) rotate(20deg);
-    }
-    .c-item-2 {
-      transform: translate(-150%, -60%) scale(2.5) rotate(350deg);
-    }
-    .c-item-3 {
-      transform: translate(150%, 260%) scale(2.3);
-    }
-    .c-item-4 {
-      transform: translate(200%, -120%) scale(1.3);
-    }
+}
+.c-hover-01 {
+  .c-item-1 {
+    transform: translate(-100%, -170%) scale(1.5) rotate(20deg);
+  }
+  .c-item-2 {
+    transform: translate(-150%, -60%) scale(2.5) rotate(350deg);
+  }
+  .c-item-3 {
+    transform: translate(150%, 260%) scale(2.3);
+  }
+  .c-item-4 {
+    transform: translate(200%, -120%) scale(1.3);
   }
 }
 .w-2 {
@@ -2061,16 +2087,16 @@ html {
   .cronut-name-t {
     color: #EBBCBA;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(-170%, 170%) scale(2.5) rotate(4deg);
-    }
-    .c-item-2 {
-      transform: translate(180%, 230%) scale(3.5) rotate(0);
-    }
-    .c-item-3 {
-      transform: translate(-40%, -150%) scale(3) rotate(-15deg);
-    }
+}
+.c-hover-02 {
+  .c-item-1 {
+    transform: translate(-170%, 170%) scale(2.5) rotate(4deg);
+  }
+  .c-item-2 {
+    transform: translate(180%, 230%) scale(3.5) rotate(0);
+  }
+  .c-item-3 {
+    transform: translate(-40%, -150%) scale(3) rotate(-15deg);
   }
 }
 .w-3 {
@@ -2080,13 +2106,13 @@ html {
   .cronut-name-t {
     color: #BEA2D6;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(-170%, 0%) scale(3) rotate(220deg);
-    }
-    .c-item-2 {
-      transform: translate(200%, 120%) scale(3) rotate(30deg);
-    }
+}
+.c-hover-03 {
+  .c-item-1 {
+    transform: translate(-170%, 0%) scale(3) rotate(220deg);
+  }
+  .c-item-2 {
+    transform: translate(200%, 120%) scale(3) rotate(30deg);
   }
 }
 .w-4 {
@@ -2097,15 +2123,18 @@ html {
     color: #E2D746;
   }
   .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(-130%, 230%) scale(2.5) rotate(20deg);
-    }
-    .c-item-2 {
-      transform: translate(240%, 10%) scale(1.5) rotate(0);
-    }
-    .c-item-3 {
-      transform: translate(-100%, -160%) scale(3) rotate(-55deg);
-    }
+    
+  }
+}
+.c-hover-04 {
+  .c-item-1 {
+    transform: translate(-130%, 230%) scale(2.5) rotate(20deg);
+  }
+  .c-item-2 {
+    transform: translate(240%, 10%) scale(1.5) rotate(0);
+  }
+  .c-item-3 {
+    transform: translate(-100%, -160%) scale(3) rotate(-55deg);
   }
 }
 .w-5 {
@@ -2115,19 +2144,19 @@ html {
   .cronut-name-t {
     color: #F4BAB9;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(120%, 300%) scale(3) rotate(60deg);
-    }
-    .c-item-2 {
-      transform: translate(-90%, -190%) scale(2) rotate(-90deg);
-    }
-    .c-item-3 {
-      transform: translate(200%, 140%) scale(2) rotate(10deg);
-    }
-    .c-item-4 {
-      transform: translate(-200%, -60%) scale(3) rotate(-15deg);
-    }
+}
+.c-hover-05 {
+  .c-item-1 {
+    transform: translate(120%, 300%) scale(3) rotate(60deg);
+  }
+  .c-item-2 {
+    transform: translate(-90%, -190%) scale(2) rotate(-90deg);
+  }
+  .c-item-3 {
+    transform: translate(200%, 140%) scale(2) rotate(10deg);
+  }
+  .c-item-4 {
+    transform: translate(-200%, -60%) scale(3) rotate(-15deg);
   }
 }
 .w-6 {
@@ -2137,17 +2166,17 @@ html {
   .cronut-name-t {
     color: #DE9570;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(-120%, -160%) scale(3) rotate(-30deg);
-    }
-    .c-item-2 {
-      transform: translate(-140%, 180%) scale(2.2) rotate(0);
-    }
-    .c-item-3 {
-      transform: translate(230%, 40%) scale(2.5) rotate(45deg);
-    }
-  }  
+}
+.c-hover-06 {
+  .c-item-1 {
+    transform: translate(-120%, -160%) scale(3) rotate(-30deg);
+  }
+  .c-item-2 {
+    transform: translate(-140%, 180%) scale(2.2) rotate(0);
+  }
+  .c-item-3 {
+    transform: translate(230%, 40%) scale(2.5) rotate(45deg);
+  }
 }
 .w-7 {
   .month {
@@ -2156,14 +2185,14 @@ html {
   .cronut-name-t {
     color: #B17F89;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(20%, 70%) scale(6.5) rotate(25deg);
-    }
-    .c-item-2 {
-      transform: translate(-60%, -90%) scale(5.5) rotate(-30deg);
-    }
 }
+.c-hover-07 {
+  .c-item-1 {
+    transform: translate(20%, 70%) scale(6.5) rotate(25deg);
+  }
+  .c-item-2 {
+    transform: translate(-60%, -90%) scale(5.5) rotate(-30deg);
+  }
 }
 .w-8 {
   .month {
@@ -2172,16 +2201,16 @@ html {
   .cronut-name-t {
     color: #977A5C;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(-110%, 230%) scale(2.5) rotate(0);
-    }
-    .c-item-2 {
-      transform: translate(280%, 200%) scale(1) rotate(0);
-    }
-    .c-item-3 {
-      transform: translate(-200%, 0%) scale(2);
-    }
+}
+.c-hover-08 {
+  .c-item-1 {
+    transform: translate(-110%, 230%) scale(2.5) rotate(0);
+  }
+  .c-item-2 {
+    transform: translate(280%, 200%) scale(1) rotate(0);
+  }
+  .c-item-3 {
+    transform: translate(-200%, 0%) scale(2);
   }
 }
 .w-9 {
@@ -2192,6 +2221,20 @@ html {
     color: #DEAE66;
   }
 }
+.c-hover-09 {
+  .c-item-1 {
+    transform: translate(-100%, -170%) scale(1.5) rotate(20deg);
+  }
+  .c-item-2 {
+    transform: translate(-150%, -60%) scale(2.5) rotate(350deg);
+  }
+  .c-item-3 {
+    transform: translate(150%, 260%) scale(2.3);
+  }
+  .c-item-4 {
+    transform: translate(200%, -120%) scale(1.3);
+  }
+}
 .w-10 {
   .month {
     color: #9C6440;
@@ -2199,13 +2242,13 @@ html {
   .cronut-name-t {
     color: #946646;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(-160%, -160%) scale(3) rotate(45deg);
-    }
-    .c-item-2 {
-      transform: translate(20%, 80%) scale(4.8) rotate(20deg);
-    }
+}
+.c-hover-10 {
+  .c-item-1 {
+    transform: translate(-160%, -160%) scale(3) rotate(45deg);
+  }
+  .c-item-2 {
+    transform: translate(20%, 80%) scale(4.8) rotate(20deg);
   }
 }
 .w-11 {
@@ -2215,13 +2258,13 @@ html {
   .cronut-name-t {
     color: #DAAD68;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-      transform: translate(-130%, -110%) scale(2.5) rotate(-120deg);
-    }
-    .c-item-2 {
-      transform: translate(240%, 280%) scale(2) rotate(40deg);
-    }
+}
+.c-hover-11 {
+  .c-item-1 {
+    transform: translate(-130%, -110%) scale(2.5) rotate(-120deg);
+  }
+  .c-item-2 {
+    transform: translate(240%, 280%) scale(2) rotate(40deg);
   }
 }
 .w-12 {
@@ -2231,15 +2274,21 @@ html {
   .cronut-name-t {
     color: #DAAD68;
   }
-  .cronut-container-t:hover {
-    .c-item-1 {
-    }
-    .c-item-2 {
-    }
-    .c-item-3 {
-    }
-    .c-item-4 {
-    }
+}
+.c-hover-12 {
+  .c-item-1 {
+  }
+  .c-item-2 {
+  }
+  .c-item-3 {
+  }
+  .c-item-4 {
+  }
+}
+
+.c-hover-s {
+  .cronut-t {
+    scale: .8;
   }
 }
 
