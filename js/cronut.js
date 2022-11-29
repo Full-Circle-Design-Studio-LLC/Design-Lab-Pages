@@ -6,7 +6,7 @@ root = document.documentElement;
 
 // horizontal scrolling section
 
-containerDiv = document.querySelector('.scroll-section-hidden-c');
+containerDiv = document.querySelector('.cronut-scroll-01');
 
 var hz1 = document.querySelector('.horizontal-scroll-section-c');
 
@@ -14,6 +14,14 @@ screenVariables();
 transX = 0;
 transXPrev = -1;
 zF = true;
+pC = document.querySelector('.page-cronut-c');
+
+hZS = document.querySelector('.horizontal-scroll-section-c');
+
+hZS.addEventListener("scroll", logScroll);
+function logScroll() {
+  console.log('scrolled 2');
+}
 
 
 (function(){
@@ -30,12 +38,14 @@ zF = true;
         });
         };
         obj.addEventListener(type, func);
-    };
+    };  
     
     throttle("scroll", "optimizedScroll");
     })();
     
-    window.addEventListener("scroll", function(){
+    pC.addEventListener("scroll", function(){
+
+        console.log('scrolled');
 
         //downUp();
     
@@ -44,7 +54,6 @@ zF = true;
             if (transX <= -secW) {
                 if (transX < transXPrev) {
                     transX = transXPrev;
-                    console.log('test2');
                     zF = false;
                     hz1.style.zIndex = '-2';
                     inH = false;
@@ -140,6 +149,8 @@ cronut = document.querySelector('.cronut-t');
 pItems = document.querySelectorAll('.mouse-parallax');
 isHovering = false;
 function hovering(cID) {
+    document.querySelector('.'+cID).classList.add('c-hover-'+cID.slice(-2));
+    document.querySelector('.'+cID).classList.add('c-hover-s');
     cContainer = document.getElementById(cID);
     isHovering = true;
     containerOffsetX = cContainer.getBoundingClientRect().x;
@@ -150,7 +161,9 @@ function hovering(cID) {
         item.style.transition = '.1s';
     })
 }
-function notHovering() {
+function notHovering(cID2) {
+    document.querySelector('.'+cID2).classList.remove('c-hover-'+cID2.slice(-2));
+    document.querySelector('.'+cID2).classList.remove('c-hover-s');
     isHovering = false;
     pItems.forEach(item => {
         item.style.transform = null;
