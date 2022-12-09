@@ -2263,7 +2263,7 @@ body {
 }
 
 .m-f-12 {
-  color: #E3AB5B;
+  color: #876A4F;
 }
 
 .w-1 .cronut-name-t {
@@ -2420,7 +2420,20 @@ body {
 }
 
 .w-12 .cronut-name-t {
-  color: #DAAD68;
+  color: #8D684B;
+}
+
+.c-hover-12 .c-item-1 {
+  transform: translate(-250%, 40%) scale(2.3) rotate(0deg);
+}
+.c-hover-12 .c-item-2 {
+  transform: translate(260%, 40%) scale(1.8) rotate(360deg);
+}
+.c-hover-12 .c-item-3 {
+  transform: translate(130%, 180%) scale(2.5) rotate(10deg);
+}
+.c-hover-12 .c-item-4 {
+  transform: translate(-170%, -120%) scale(2.3) rotate(-75deg);
 }
 
 .c-hover-s .cronut-t,

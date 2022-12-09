@@ -79,7 +79,6 @@ function logScroll() {
             if (topVal >= 0) {
               //resetMonths(0);
             } else if (topVal >= halfH*(-1)) {
-              console.log('1');
               if (1 < currentPane) {
                 mHide(months[1]);
               } else {
@@ -87,57 +86,46 @@ function logScroll() {
               }
               currentPane = 1;
             } else if (topVal >= (-scrnHeight - halfH)) {
-              console.log('2');
               mHide(1);
               mShow(months[1]);
               currentPane = 2;
             } else if (topVal >= (-scrnHeight*2 - halfH)) {
-              console.log('3');
               mHide(2);
               mShow(months[2]);
               currentPane = 3;
             } else if (topVal >= (-scrnHeight*3 - halfH)) {
-              console.log('4');
               mHide(3);
               mShow(months[3]);
               currentPane = 4;
             } else if (topVal >= (-scrnHeight*4 - halfH)) {
-              console.log('5');
               mHide(4);
               mShow(months[4]);
               currentPane = 5;
             } else if (topVal >= (-scrnHeight*5 - halfH)) {
-              console.log('6');
               mHide(5);
               mShow(months[5]);
               currentPane = 6;
             } else if (topVal >= (-scrnHeight*6 - halfH)) {
-              console.log('7');
               mHide(6);
               mShow(months[6]);
               currentPane = 7;
             } else if (topVal >= (-scrnHeight*7 - halfH)) {
-              console.log('8');
               mHide(7);
               mShow(months[7]);
               currentPane = 8;
             } else if (topVal >= (-scrnHeight*8 - halfH)) {
-              console.log('9');
               mHide(8);
               mShow(months[8]);
               currentPane = 9;
             } else if (topVal >= (-scrnHeight*9 - halfH)) {
-              console.log('10');
               mHide(9);
               mShow(months[9]);
               currentPane = 10;
             } else if (topVal >= (-scrnHeight*10 - halfH)) {
-              console.log('11');
               mHide(10);
               mShow(months[10]);
               currentPane = 11;
             } else if (topVal >= (-scrnHeight*11 - halfH)) {
-              console.log('12');
               mHide(11);
               mHide(months[10]);
               mShow(months[11]);
@@ -197,7 +185,6 @@ function scrollSetup() {
           } else if (scrollItem.classList.contains("cronut-scroll")) {
             animate(scrollItem, entry, scrl2, false);
           } else if (scrollItem.classList.contains('c-scroll')) {
-            console.log('scroll item');
           }
         })
       }, options)
@@ -244,6 +231,8 @@ pItems = document.querySelectorAll('.mouse-parallax');
 isHovering = false;
 function hovering(cID) {
     document.querySelector('.'+cID).classList.add('c-hover-'+cID.slice(-2));
+    console.log(cID);
+    console.log('c-hover-'+cID.slice(-2));
     document.querySelector('.'+cID).classList.add('c-hover-s');
     cContainer = document.getElementById(cID);
     isHovering = true;
