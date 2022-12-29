@@ -2436,19 +2436,25 @@ html {
 
 }
 @media (min-width: 1200px) {
-  .window-t {
-    padding: 75px;
+  .window-t,
+  .cronut-scroll {
+    padding: calc(55vh - 300px) 75px 75px;
   }
   .cronut-container-t,
   .c-hover {
     margin-left: 10%;
-    max-width: 450px;
+    max-width: 500px;
+  }
+  .year-fixed,
+  .month-fixed {
+    top: calc(55vh - 300px);
   }
   .year-fixed {
     right: calc(40vw - 380px);
   }
   .cronut-text-t {
     width: 315px;
+    top: calc(55vh - 210px)
   }
 }
 
