@@ -2400,27 +2400,56 @@ html {
     display: flex;
     padding: 8vw;
   }
+  .month-fixed,
   .year-fixed {
-    font-size: 62px;
-    line-height: 60px;
+    top: 11vw;
+  }
+  .year-fixed {
+    font-size: 45px;
+    line-height: 45px;
   }
   .month-fixed {
     //right: calc(8vw + 96px);
     right: unset;
     left: 65vw;
-    font-size: 152px;
-    line-height: 119px;
+    font-size: 110px;
+    line-height: 90px;
+  }
+  .cronut-name-t {
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
   .cronut-text-t {
     bottom: unset;
-    top: calc(8vw + 120px);
+    top: calc(11vw + 90px);
     //right: 8vw;
     right: unset;
     left: 65vw;
-    width: 372px;
+    width: 300px;
     padding: 0;
   }
+  .cronut-description-t {
+    font-size: 22px;
+  }
 
+}
+@media (min-width: 1200px) {
+  .window-t {
+    padding: 75px;
+  }
+  .cronut-container-t,
+  .c-hover {
+    margin-left: 10%;
+    max-width: 450px;
+  }
+  .year-fixed {
+    right: calc(40vw - 380px);
+  }
+  .cronut-text-t {
+    width: 315px;
+  }
 }
 
 
