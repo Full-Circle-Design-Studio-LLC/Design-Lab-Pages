@@ -2559,3 +2559,75 @@ html {
     white-space: nowrap;
   }
 }
+
+/* ----------------------------------------------------------- site remakes */
+.fold {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c6cbff;
+}
+.image-section {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 300vh;
+  
+}
+.sticky-text {
+  display: flex;
+  position: sticky;
+  top: 40vh;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 40vw;
+  margin: auto;
+  height: 200px;
+  font-size: 35px;
+}
+.sticky-image {
+  position: sticky;
+  top: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+.extra-space-100 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+.sticky-item-container-2 {
+  position: absolute;
+  top: 0;
+}
+.sticky-text-container {
+  position: absolute;
+  top: 80vh;
+}
+.sticky-text-container-2 {
+  position: absolute;
+  top: 60vh;
+}
+.container {
+  position: relative;
+}
+.container,
+.sticky-item-container-2 {
+  height: 400vh;
+}
+.extra-space-50 {
+  position: relative;
+  height: 50vh;
+  width: 100vw;
+  background-color: white;
+  z-index: -3;
+}
