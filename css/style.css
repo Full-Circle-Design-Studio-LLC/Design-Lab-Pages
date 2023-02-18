@@ -1868,6 +1868,7 @@ body {
   background-color: lightseagreen;
   height: 100vh;
   width: 100vw;
+  display: none;
 }
 
 .scroll-section-hidden {
@@ -1896,7 +1897,7 @@ body {
   width: 200px;
   height: 200px;
   border: 1px solid blue;
-  background: rgba(127, 255, 212, 0.5098039216);
+  background: #7fffd482;
   font-size: 100px;
 }
 
@@ -2491,22 +2492,27 @@ body {
     font-size: 115px;
     line-height: 100px;
   }
+
   .month-fixed,
-  .year-fixed {
+.year-fixed {
     font-size: 115px;
     line-height: 100px;
   }
+
   .month-fixed {
     right: calc(8vw + 168px);
   }
+
   .cronut-name-t {
     font-size: 50px;
     line-height: 60px;
     margin-bottom: 15px;
   }
+
   .cronut-description-t {
     font-size: 25px;
   }
+
   .cronut-text-t {
     padding-right: calc(8vw + 90px);
     padding-left: 90px;
@@ -2514,39 +2520,46 @@ body {
 }
 @media (min-width: 1024px) {
   .cronut-container-t,
-  .c-hover {
+.c-hover {
     margin: 0;
     max-width: 400px;
   }
+
   .c-hover {
     position: relative;
     top: unset;
     max-height: 450px;
   }
+
   .cronut-scroll {
     display: flex;
     padding: 8vw;
   }
+
   .month-fixed,
-  .year-fixed {
+.year-fixed {
     top: 11vw;
   }
+
   .year-fixed {
     font-size: 45px;
     line-height: 45px;
   }
+
   .month-fixed {
     right: unset;
     left: 65vw;
     font-size: 110px;
     line-height: 90px;
   }
+
   .cronut-name-t {
     font-size: 40px;
     line-height: 40px;
     margin-top: 10px;
     margin-bottom: 5px;
   }
+
   .cronut-text-t {
     bottom: unset;
     top: calc(11vw + 90px);
@@ -2555,27 +2568,32 @@ body {
     width: 300px;
     padding: 0;
   }
+
   .cronut-description-t {
     font-size: 22px;
   }
 }
 @media (min-width: 1200px) {
   .window-t,
-  .cronut-scroll {
+.cronut-scroll {
     padding: calc(55vh - 300px) 75px 75px;
   }
+
   .cronut-container-t,
-  .c-hover {
+.c-hover {
     margin-left: 10%;
     max-width: 500px;
   }
+
   .year-fixed,
-  .month-fixed {
+.month-fixed {
     top: calc(55vh - 300px);
   }
+
   .year-fixed {
     right: calc(40vw - 380px);
   }
+
   .cronut-text-t {
     width: 315px;
     top: calc(55vh - 210px);

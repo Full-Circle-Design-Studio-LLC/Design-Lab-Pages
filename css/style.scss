@@ -1760,6 +1760,7 @@ body {
   background-color: lightseagreen;
   height: 100vh;
   width: 100vw;
+  display: none;
 }
 .scroll-section-hidden {
   width: 100vw;
@@ -1979,7 +1980,7 @@ html {
   background-color: white;
   padding: 8vw;
   * {
-    font-family: 'proxima-nova';    
+    font-family: 'proxima-nova';
   }
 }
 .date-t {
@@ -2165,7 +2166,7 @@ html {
     color: #E2D746;
   }
   .cronut-container-t:hover {
-    
+
   }
 }
 .c-hover-04 {
@@ -2348,13 +2349,13 @@ html {
 }
 .m-show {
   transform-origin: bottom;
-  transform: rotate3d(1, 0, 0, 0);  
+  transform: rotate3d(1, 0, 0, 0);
 }
 .m-hide {
   transform-origin: top;
   transform: rotate3d(1, 0, 0, .25turn);
 }
- 
+
 @media (min-width: 768px) {
   .date-t {
     font-size: 115px;
@@ -2488,7 +2489,7 @@ html {
 }
 .s-bar-2-sub-1 {
   position: absolute;
-  background-color: orangered;  
+  background-color: orangered;
   height: 30vh;
   width: 100vw;
   top: -10vh;
@@ -2511,7 +2512,7 @@ html {
   height: 145vh;
   background-image: url("../assets/12.JPG");
   position: absolute;
-  top: 120vh; 
+  top: 120vh;
   clip-path: polygon(100% 0, 0 15%, 0 100%, 100% 100%);
 }
 
@@ -2559,7 +2560,6 @@ html {
     white-space: nowrap;
   }
 }
-
 /* ----------------------------------------------------------- site remakes */
 .fold {
   display: flex;
