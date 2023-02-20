@@ -1,3 +1,130 @@
+.game-window {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50vh;
+  left: 0;
+  right: 0;
+  margin: -250px auto 0 auto;
+  width: 900px;
+  height: 500px;
+  border: 3px solid black;
+}
+
+.game-window__background {
+  width: 100%;
+  height: 100%;
+}
+
+.game-window__background_grassland__sky {
+  height: 85%;
+  background-color: skyblue;
+}
+
+.game-window__background_grassland__ground {
+  background-color: rgb(27, 150, 27);
+  height: 15%;
+}
+
+.game-window__start-round {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 15px;
+  color: white;
+  border-radius: 10px;
+  border: 5px solid white;
+  background-color: salmon;
+  width: 350px;
+  height: 100px;
+  font-size: 40px;
+}
+
+.game-asset__block {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  transition-duration: 0.1s;
+}
+
+.game-asset__block_green {
+  background-color: green;
+}
+
+.game-asset__enemy {
+  width: 70px;
+  position: absolute;
+  bottom: 10%;
+  left: -70px;
+  transition-duration: 5s;
+  transition-timing-function: linear;
+}
+
+.game-asset__enemy_left {
+  transform: translateX(50vw);
+}
+
+.game-asset__heart-container {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 75px;
+  justify-content: end;
+}
+
+.game-asset__heart-container__heart {
+  height: 100%;
+}
+
+.game-asset__chest {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  margin: auto;
+  height: 80px;
+}
+
+.game-asset__click-grid {
+  display: grid;
+  height: 90%;
+  width: auto;
+  aspect-ratio: 1/1;
+  border: 3px solid peachpuff;
+  border-radius: 5px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 3px;
+}
+
+.game-asset__click-grid__square {
+  background-color: green;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.game-asset__click-grid {
+  display: grid;
+  height: 90%;
+  width: auto;
+  aspect-ratio: 1/1;
+  border: 3px solid peachpuff;
+  border-radius: 5px;
+}
+
 /*
 @keyframes slideOut {
   from {
@@ -338,7 +465,7 @@ body {
   margin-top: 30px;
 }
 
-.button {
+.button-a {
   width: 100px;
   height: 100px;
   color: red;
@@ -350,11 +477,11 @@ body {
   box-shadow: 0px 5px black;
 }
 
-.button:hover {
+.button-a:hover {
   cursor: pointer;
 }
 
-.button:active {
+.button-a:active {
   box-shadow: 0 0;
   transform: translateY(5px);
 }
