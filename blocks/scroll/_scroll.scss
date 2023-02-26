@@ -1,0 +1,15 @@
+.page-scroll-4 {
+    height: 500vh;
+    background-color: black;
+}
+.animation-img {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.animation-img:nth-child(1) {
+    display: block;
+}

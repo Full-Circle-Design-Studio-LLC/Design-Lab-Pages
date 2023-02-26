@@ -116,13 +116,22 @@
   cursor: pointer;
 }
 
-.game-asset__click-grid {
-  display: grid;
-  height: 90%;
-  width: auto;
-  aspect-ratio: 1/1;
-  border: 3px solid peachpuff;
-  border-radius: 5px;
+.page-scroll-4 {
+  height: 500vh;
+  background-color: black;
+}
+
+.animation-img {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.animation-img:nth-child(1) {
+  display: block;
 }
 
 /*
@@ -2778,13 +2787,11 @@ body {
 
 #cow-video {
   position: fixed;
-  top: 37vh;
-  max-width: 100vw;
-  object-fit: cover;
-  max-height: 50vh;
-  margin: auto;
   left: 0;
-  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 /* ----------------------------------------------------------- text-fit */

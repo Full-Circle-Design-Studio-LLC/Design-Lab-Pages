@@ -2,6 +2,7 @@
 @use 'blocks/game-window/game-window';
 @use 'blocks/button/button';
 @use 'blocks/click-game/click-game';
+@use 'blocks/scroll/scroll';
 
 /*
 @keyframes slideOut {
@@ -2531,13 +2532,16 @@ html {
 }
 #cow-video {
   position: fixed;
-  top: 37vh;
-  max-width: 100vw;
-  object-fit: cover;
-  max-height: 50vh;
-  margin: auto;
+  // top: 37vh;
+  // max-width: 100vw;
+  // object-fit: cover;
+  // max-height: 50vh;
+  // margin: auto;
   left: 0;
-  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 

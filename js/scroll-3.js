@@ -65,6 +65,3 @@ window.addEventListener("scroll", function() {
     }
     
 })
-
-// if last n value is too close to current, don't fire
-
