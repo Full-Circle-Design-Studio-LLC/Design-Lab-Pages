@@ -124,6 +124,7 @@
 .animation-img {
   position: fixed;
   display: none;
+  object-fit: cover;
   top: 0;
   left: 0;
   width: 100vw;
