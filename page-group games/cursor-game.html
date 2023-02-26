@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Cursor Game</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<body>
+
+<div class="cursor-game-home">
+  <div class="game-window">
+    <div class="game-asset__heart-container">
+        <img class="game-asset__heart-container__heart" src="../assets/heart.png">
+        <img class="game-asset__heart-container__heart" src="../assets/heart.png">
+        <img class="game-asset__heart-container__heart" src="../assets/heart.png">
+    </div>
+    <div class="game-window__background game-window__background_grassland">
+        <div class="game-window__background_grassland__sky"></div>
+        <div class="game-window__background_grassland__ground"></div>
+    </div>
+    <div class="button game-window__start-round" onclick="startRound()">START ROUND</div>
+    <img class="game-asset__chest" src="../assets/treasure-chest.png">
+    <div class="game-asset__block game-asset__block_green" data-value="3" onclick="breakBlock(this)"></div>
+    <img class="game-asset__enemy game-asset__enemy_left" src="../assets/monkey-1.png">
+  </div>
+</div>
+
+</body>
+</html>
+<script src="../blocks/cursor-game/cursor-game.js"></script>
