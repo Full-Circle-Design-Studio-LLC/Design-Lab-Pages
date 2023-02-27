@@ -119,6 +119,7 @@
 .page-scroll-4 {
   height: 500vh;
   background-color: black;
+  overflow: hidden;
 }
 
 .animation-img {
@@ -133,6 +134,17 @@
 
 .animation-img:nth-child(1) {
   display: block;
+}
+
+.loading-screen {
+  position: fixed;
+  top: calc(50vh - 150px);
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
 }
 
 /*

@@ -29,19 +29,41 @@ window.addEventListener("scroll", function() {
 
 
 
-for (let i = 0; i < photoCount+1; i++) {
+for (let i = 0; i < photoCount+1; i+= 1) {
     count = i;
     createImageElement(count);
 }
-currentImage = document.querySelector('.animation-img-1');
+currentImage = document.querySelector('.animation-img-0');
+
+allImages = document.querySelectorAll('.animation-img');
+
+lastImage = document.querySelector('.animation-img-250');
+lastImage.addEventListener('load', function() {
+    console.log('last image loaded');
+    allImages.forEach(image => {
+        image.style.display = 'none';
+    });
+    document.querySelector('.loading-screen').style.display = 'none';
+})
+
+// setTimeout(() => {
+//     allImages.forEach(image => {
+//         image.style.display = 'none';
+//     });
+//     document.querySelector('.loading-screen').style.display = 'none';
+// }, 1500);
+
+page.style.overflow = 'auto';
 
 
 function createImageElement(c) {
-    img = document.createElement("img");
+    // img = document.createElement("img");
+    img = new Image();
     img.src= 'assets/JPEG/animation-'+c+'.jpg';
     img.classList.add('animation-img');
     img.classList.add('animation-img-'+c);
     page.append(img);
+    img.style.display = 'block';
 }
 
 function setImageDisplay(percent) {
