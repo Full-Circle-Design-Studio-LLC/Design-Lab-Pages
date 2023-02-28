@@ -1,12 +1,7 @@
-
-pause = false;
-n = .2;
-
-count = '';
 page = document.querySelector('.page-scroll-4');
 
 pageHeight = page.offsetHeight-window.innerHeight;
-photoCount = 250;
+photoCount = 58;
 
 window.addEventListener('DOMContentLoaded', (event) => {
     pageHeight = page.offsetHeight-window.innerHeight;
@@ -18,17 +13,11 @@ window.addEventListener("scroll", function() {
     positionPercentage = scrollPos/pageHeight;
     console.log(positionPercentage);
 
-    setImageDisplay(positionPercentage);
-    //n = scrollPos*i;
-    // nCalculation = n - video.currentTime;
-    // if (nCalculation < -0.1 || nCalculation > 0.1) {
-    //     video.currentTime = n;
-    // }
-    
+    setImageDisplay(positionPercentage);    
 })
 
 
-
+count = '';
 for (let i = 0; i < photoCount+1; i+= 1) {
     count = i;
     createImageElement(count);
@@ -37,7 +26,7 @@ currentImage = document.querySelector('.animation-img-0');
 
 allImages = document.querySelectorAll('.animation-img');
 
-lastImage = document.querySelector('.animation-img-250');
+lastImage = document.querySelector('.animation-img-58');
 lastImage.addEventListener('load', function() {
     console.log('last image loaded');
     allImages.forEach(image => {
@@ -46,20 +35,13 @@ lastImage.addEventListener('load', function() {
     document.querySelector('.loading-screen').style.display = 'none';
 })
 
-// setTimeout(() => {
-//     allImages.forEach(image => {
-//         image.style.display = 'none';
-//     });
-//     document.querySelector('.loading-screen').style.display = 'none';
-// }, 1500);
-
 page.style.overflow = 'auto';
 
 
 function createImageElement(c) {
     // img = document.createElement("img");
     img = new Image();
-    img.src= 'assets/JPEG/animation-'+c+'.jpg';
+    img.src= 'assets/JPEG-2/yg'+c+'.jpg';
     img.classList.add('animation-img');
     img.classList.add('animation-img-'+c);
     page.append(img);
